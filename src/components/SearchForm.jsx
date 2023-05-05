@@ -1,18 +1,13 @@
-// import { useState } from "react";
-
 import { useGlobalContext } from "../context";
 
 const SearchForm = () => {
-  // const [input, setInput] = useState("");
   const { setSearch } = useGlobalContext();
   function handleSubmit(e) {
     e.preventDefault();
     const searchValue = e.target.elements.search.value;
-    // console.log(e.target.elements.search.value);
     if (!searchValue) return;
-    console.log(searchValue);
-    // e.currentTarget.reset();
     setSearch(searchValue);
+    e.currentTarget.reset();
   }
   return (
     <section className="search-form">
